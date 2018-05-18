@@ -1,0 +1,11 @@
+[
+  {
+    "name": "Welcome",
+    "settings": [
+      {
+        "type": "paragraph",
+        "content": "Theme Settings will go here."
+      }
+    ]
+  }
+]
