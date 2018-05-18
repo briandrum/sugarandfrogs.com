@@ -1,0 +1,33 @@
+{
+  "name": "sugarandfrogs.com",
+  "version": "1.0.0",
+  "description": "sugarandfrogs.com",
+  "keywords": [
+    "browser",
+    "css-theme",
+    "suitcss",
+    "style"
+  ],
+  "homepage": "https://github.com/briandrum/sugarandfrogs.com#readme",
+  "bugs": "https://github.com/briandrum/sugarandfrogs.com/labels/bug",
+  "author": "Brian Drum",
+  "files": [
+    "index.css",
+    "lib"
+  ],
+  "style": "index.css",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/briandrum/sugarandfrogs.com.git"
+  },
+  "scripts": {
+    "build": "suitcss --config config/preprocessor.json index.css theme/assets/style.css",
+    "watch": "npm run build -- -w"
+  },
+  "dependencies": {
+    "suitcss": "^3.0.0"
+  },
+  "devDependencies": {
+    "suitcss-preprocessor": "^4.0.0"
+  }
+}
