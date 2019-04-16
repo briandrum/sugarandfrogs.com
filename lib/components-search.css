@@ -1,0 +1,43 @@
+.Search {
+  border-color: transparent;
+  border-style: solid;
+  border-width: 1px;
+  display: inline-block;
+  padding: 8px;
+  transition: all, ease-in-out, 0.25s;
+}
+
+.Search:focus-within,
+.Search:hover {
+  border-color: #fff;
+}
+
+.Search svg {
+  vertical-align: bottom;
+}
+
+.Search-input {
+  background: transparent;
+  border: none;
+  color: inherit;
+  display: inline-block;
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 900;
+  letter-spacing: 0.05em;
+  line-height: 16px;
+  padding: 4px;
+  text-transform: uppercase;
+}
+
+.Search-input::placeholder {
+  color: inherit;
+}
+
+.Search-input:focus::placeholder {
+  color: transparent;
+}
+
+.Search-input:focus {
+  outline: none;
+}

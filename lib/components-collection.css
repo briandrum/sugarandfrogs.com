@@ -1,0 +1,18 @@
+/**
+ * Collection
+ */
+
+.Collection {
+  display: block;
+}
+
+.Collection-title {
+  background-color: #ececec;
+  align-items: center;
+  display: flex;
+  height: 20vh;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+}
+

@@ -1,0 +1,18 @@
+<!-- /snippets/product-loop.liquid -->
+<article class="ProductPreview" itemscope itemtype="http://schema.org/Product">
+  <a class="ProductPreview-url" href="{{ product.url | within: collection }}" itemprop="url">
+    <img alt="{{ product.featured_image.alt | escape }}" class="ProductPreview-image" itemprop="image" src="{{ product.featured_image.src | product_img_url: 'large' }}">
+    <h1 class="ProductPreview-name" itemprop="name">{{ product.title }}</h1>
+    <div class="ProductPreview-offer">
+      {% if product.price_varies %}
+      <span class="Offer" itemprop="offers" itemscope="" itemtype="http://schema.org/Offer">
+        <span itemprop="priceCurrency" content="USD">$</span><span itemprop="price" content="{{ product.price_min | money_without_currency}}">{{ product.price_min | money_without_currency}}</span>
+      </span>
+      &ndash;
+      {% endif %}
+      <span class="Offer" itemprop="offers" itemscope="" itemtype="http://schema.org/Offer">
+        <span itemprop="priceCurrency" content="USD">$</span><span itemprop="price" content="{{ product.price_max | money_without_currency}}">{{ product.price_max | money_without_currency}}</span>
+      </span>
+    </div>
+  </a>
+</article>

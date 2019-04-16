@@ -22,7 +22,7 @@
   },
   "scripts": {
     "build": "suitcss --config config/preprocessor.json index.css theme/assets/style.css",
-    "watch": "npm run build -- -w"
+    "watch": "npm run build -- -v -w"
   },
   "dependencies": {
     "suitcss": "^3.0.0"

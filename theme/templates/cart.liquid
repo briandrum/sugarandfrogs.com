@@ -1,1 +1,60 @@
-This is my cart page!
+<!-- /templates/cart.liquid -->
+{% if cart.item_count > 0 %}
+  <form action="/cart" method="post">
+    <table>
+      <thead>
+        <tr>
+          <th></th>
+          <th>Product title</th>
+          <th>Price</td>
+          <th>Quantity</th>
+          <th>Total</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for item in cart.items %}
+        <tr>
+          <td>
+            <div>
+              <a href="{{ item.product.url }}">
+                <img src="{{ item.product.featured_image.src | product_img_url: '250x250' }}" alt="{{ item.title | escape }}" />
+              </a>
+            </div>
+          </td>
+          <td>
+            <div>
+              <a href="{{ item.product.url | within: collections.all }}">{{ item.title }}</a>
+            </div>
+          </td>
+          <td>{{ item.price | money }}</td>
+          <td>
+            <input id="updates_{{ item.id }}"{% unless item.variant.inventory_management == blank or item.variant.inventory_policy == 'continue' %} max="{{ item.variant.inventory_quantity }}" {% endunless %} min="0" name="updates[]" required type="number" value="{{ item.quantity }}" />
+          </td>
+          <td>{{ item.line_price | money }}</td>
+          <td>
+            <a href="/cart/change?line={{ forloop.index }}&quantity=0">Remove</a>
+          </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    <div>
+      <h3>Subtotal: {{ cart.total_price | money }}</h3>
+      <a class="Button" href="/">Continue shopping</a>
+      or
+      <button class="Button" type="submit" name="update">Update cart</button>
+      or
+      <input class="Button" type="submit" name="checkout">Check out</button>
+      {% if additional_checkout_buttons %}
+      <p>
+        {{ content_for_additional_checkout_buttons }}
+      </p>
+      {% endif %}
+    </div>
+  </form>
+{% else %}
+
+  <p class="u-posAbsoluteCenter">You don’t have any items in your cart!</p>
+
+{% endif %}

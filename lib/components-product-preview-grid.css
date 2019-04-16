@@ -1,0 +1,18 @@
+/**
+ * Product Preview Grid
+ */
+
+.ProductPreviewGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  justify-content: center;
+  margin-bottom: 2em;
+}
+
+@media (--viewportLarge) {
+
+  .ProductPreviewGrid {
+    grid-template-columns: repeat(auto-fit, 320px);
+  }
+
+}

@@ -1,1 +1,16 @@
-This is my collection page!
+<!-- /templates/collection.liquid -->
+<div class="Collection">
+  <h2 class="Collection-title">
+    {{ collection.title }}
+  </h2>
+  {% if collection.description %}
+    <div class="Collection-description">
+      {{ collection.description }}
+    </div>
+  {% endif %}
+  <section class="ProductPreviewGrid">
+    {% for product in collection.products %}
+      {% include 'product-loop' %}
+    {% endfor %}
+  </section>
+</div>

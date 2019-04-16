@@ -1,0 +1,20 @@
+/**
+ * base
+ */
+
+:root {
+  --body-font-family: var(--fontFamilySystem);
+}
+
+/**
+ * components-product-preview
+ */
+
+:root {
+  --ProductPreview-name-font-size: var(--fontSizeMediumPx);
+  --ProductPreview-offer-font-size: var(--fontSizeSmallPx);
+}
+
+:root {
+  --Header-banner-fontFamily: var(--fontFamilySerif);
+}

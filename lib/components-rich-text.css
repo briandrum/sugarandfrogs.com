@@ -1,0 +1,12 @@
+/**
+ * Rich Text
+ */
+
+.RichText {
+  margin: 0 auto;
+  max-width: 40em;
+}
+
+.RichText h1 {
+  font-family: var(--fontFamilySerif);
+}

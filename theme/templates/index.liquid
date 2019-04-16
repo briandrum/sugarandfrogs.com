@@ -1,1 +1,13 @@
-This is my index page!
+<!-- /templates/index.liquid -->
+{% assign page = pages.frontpage %}
+
+<section>
+  {{ page.content }}
+</section>
+
+{% assign collection = collections.featured %}
+<section class="ProductPreviewGrid">
+  {% for product in collection.products %}
+    {% include 'product-loop' %}
+  {% endfor %}
+</section>
