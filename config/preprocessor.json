@@ -1,8 +1,0 @@
-{
-  "minify": true,
-  "stylelint": {
-    "extends": "stylelint-config-suitcss",
-    "ignoreFiles": "**/normalize.css",
-    "rules": {}
-  }
-}
